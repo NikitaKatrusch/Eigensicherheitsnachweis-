@@ -87,40 +87,58 @@
 
       <!-- Zugehöriges Betriebsmittel -->
       <div class="device-tables">
-        <table class="device-table">
-          <thead>
-            <tr>
-              <th>Bezeichnung</th>
-              <th>Kanal</th>
-              <th>Hersteller</th>
-              <th>Betriebsmittelkennzeichnung</th>
-              <th>Ex-Kennzeichnung</th>
-              <th>Zertifikatsnummer</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>
-                <select>
-                  <option value="">Bitte wählen</option>
-                  <option value="ELX1052">ELX1052</option>
-                  <option value="EPX3184-0022">EPX3184-0022</option>
-                </select>
-              </td>
-              <td>
-                <select>
-                  <option value="">Bitte wählen</option>
-                  <option value="CH1">CH1</option>
-                  <option value="CH2">CH2</option>
-                </select>
-              </td>
-              <td>Beckhoff Automation GmbH & Co. KG</td>
-              <td><input type="text" /></td>
-              <td class="ex-kennzeichnung">---</td>
-              <td class="zertifikatsnummer">---</td>
-            </tr>
-          </tbody>
-        </table>
+          <table class="device-table">
+            <tbody>
+              <tr>
+                <th>Bezeichnung</th>
+              </tr>
+              <tr>
+                <td>
+                  <select id="bezeichnung" onchange="updateBetriebsmittelDetails()">
+                    <option value="">Bitte wählen</option>
+                    <option value="ELX1052">ELX1052</option>
+                    <option value="EPX3184-0022">EPX3184-0022</option>
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <th>Kanal</th>
+              </tr>
+              <tr>
+                <td>
+                  <select id="kanal-select">
+                    <option value="">Bitte wählen</option>
+                    <option value="CH1">CH1</option>
+                    <option value="CH2">CH2</option>
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <th>Hersteller</th>
+              </tr>
+              <tr>
+                <td>Beckhoff Automation GmbH & Co. KG</td>
+              </tr>
+              <tr>
+                <th>Betriebsmittelkennzeichnung</th>
+              </tr>
+              <tr>
+                <td><input type="text" /></td>
+              </tr>
+              <tr>
+                <th>Ex-Kennzeichnung</th>
+              </tr>
+              <tr>
+                <td class="ex-kennzeichnung">---</td>
+              </tr>
+              <tr>
+                <th>Zertifikatsnummer</th>
+              </tr>
+              <tr>
+                <td class="zertifikatsnummer">---</td>
+              </tr>
+            </tbody>
+          </table>
 
         <table class="device-table berechnung">
           <thead>
