@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Condensed:wght@400;600&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <title>Beckhoff Formular</title>
+  <link rel="stylesheet" href="Design.css" />
+</head>
+<body>
+
+  <div class="header-bar">
+    <div class="header-left">Nachweis der Eigensicherheit</div>
+    <div class="header-right">
+      <img src="logo.png" height="45" width="233.68">
+      <span class="tagline">New Automation Technology</span>
+    </div>
+  </div>
+
+  <!-- Allgemeine Informationen -->
+  <div class="container">
+    <div class="info-section">
+      <h3>Allgemeine Informationen</h3>
+      <div class="info-grid">
+        <div class="field">
+          <label for="projektbezeichnung">Projektbezeichnung:</label>
+          <input type="text" id="projektbezeichnung" />
+        </div>
+        <div class="field">
+          <label for="aussteller">Aussteller:</label>
+          <input type="text" id="aussteller" />
+        </div>
+        <div class="field">
+          <label for="projektleiter">Projektleiter:</label>
+          <input type="text" id="projektleiter" />
+        </div>
+        <div class="field">
+          <label for="datum">Ausstellungsdatum:</label>
+          <input type="date" id="datum" />
+        </div>
+      </div>
+    </div>
+
+    <!-- Geräteeigenschaften -->
+    <div class="info-section">
+      <h3>Geräteeigenschaften</h3>
+      <div class="device-wrapper">
+        <div class="device-left">
+          <div class="section">
+            <h4>Serie</h4>
+            <label><input type="radio" name="serie" value="ELX" onclick="toggleHardwareStand(true)"> ELX</label>
+            <label><input type="radio" name="serie" value="EPX" onclick="toggleHardwareStand(false)"> EPX</label>
+          </div>
+
+          <div class="section" id="hardwareSection">
+            <div class="section-title">
+              <h4>Hardware Stand ELX9560</h4>
+              <div class="tooltip-wrapper">
+                <span class="info-icon"><img src="info.png" height="10" width="10"/></span>
+                <div class="tooltip-flyout">
+                  <img src="abbildung.png" />
+                </div>
+              </div>
+            </div>
+            <label><input type="radio" name="hardware" value="bis04"> bis 04</label>
+            <label><input type="radio" name="hardware" value="ab05"> ab 05</label>
+          </div>
+        </div>
+
+        <div class="device-right">
+          <div class="section">
+            <div class="section-title">
+              <h4>Klassifizierung der Atmosphäre</h4>
+              <div class="tooltip-wrapper">
+                <span class="info-icon"><img src="info2.png" height="10" width="10"/></span>
+                <div class="tooltip-flyout">
+                  <img src="tabelle.png" />
+                </div>
+              </div>
+            </div>
+            <label><input type="radio" name="atmos" value="I"> I</label>
+            <label><input type="radio" name="atmos" value="IA"> IA</label>
+            <label><input type="radio" name="atmos" value="IIB/III"> IIB/III</label>
+            <label><input type="radio" name="atmos" value="IIC"> IIC</label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Zugehöriges Betriebsmittel -->
+      <div class="device-tables">
+        <table class="device-table">
+          <thead>
+            <tr>
+              <th>Bezeichnung</th>
+              <th>Kanal</th>
+              <th>Hersteller</th>
+              <th>Betriebsmittelkennzeichnung</th>
+              <th>Ex-Kennzeichnung</th>
+              <th>Zertifikatsnummer</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <select>
+                  <option value="">Bitte wählen</option>
+                  <option value="ELX1052">ELX1052</option>
+                  <option value="EPX3184-0022">EPX3184-0022</option>
+                </select>
+              </td>
+              <td>
+                <select>
+                  <option value="">Bitte wählen</option>
+                  <option value="CH1">CH1</option>
+                  <option value="CH2">CH2</option>
+                </select>
+              </td>
+              <td>Beckhoff Automation GmbH & Co. KG</td>
+              <td><input type="text" /></td>
+              <td class="ex-kennzeichnung">---</td>
+              <td class="zertifikatsnummer">---</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <table class="device-table berechnung">
+          <thead>
+            <tr>
+              <th>Uo [V]</th>
+              <th>Io [mA]</th>
+              <th>Po [mW]</th>
+              <th>Lo [mH]</th>
+              <th>Co [nF]</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>–</td>
+              <td>–</td>
+              <td>–</td>
+              <td>–</td>
+              <td>–</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <script src="Code.js"></script>
+</body>
+</html>
